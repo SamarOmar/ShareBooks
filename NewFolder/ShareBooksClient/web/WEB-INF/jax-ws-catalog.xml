@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ShareBooksServer/UsersWS?wsdl" uri="wsdl/localhost_8080/ShareBooksServer/UsersWS.wsdl"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/UsersWS?xsd=1" uri="wsdl/localhost_8080/ShareBooksServer/UsersWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/BookWS?wsdl" uri="wsdl/localhost_8080/ShareBooksServer/BookWS.wsdl"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/BookWS?xsd=1" uri="wsdl/localhost_8080/ShareBooksServer/BookWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/SearchWS?wsdl" uri="wsdl/localhost_8080/ShareBooksServer/SearchWS.wsdl"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/SearchWS?xsd=1" uri="wsdl/localhost_8080/ShareBooksServer/SearchWS.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/OrderWS?wsdl" uri="wsdl/localhost_8080/ShareBooksServer/OrderWS.wsdl"/>
+    <system systemId="http://localhost:8080/ShareBooksServer/OrderWS?xsd=1" uri="wsdl/localhost_8080/ShareBooksServer/OrderWS.xsd_1.xsd"/>
+</catalog>
