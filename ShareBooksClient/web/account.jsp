@@ -62,7 +62,9 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#add">Add Book</a>
             </li>
             <!-- Order list -->
-	
+	    <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#myOrder">Orders' List</a>
+            </li>	
           
  
             <li class='nav-item mx-0 mx-lg-1'> <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger ' href='logout.jsp'>Log out </a></li> 
