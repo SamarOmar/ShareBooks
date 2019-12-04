@@ -36,7 +36,6 @@ public class BookWS {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
           
             try (Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/ShareBooks", "KSU", "KSU")) {
-              
               PreparedStatement st = con.prepareStatement("insert into  BOOKS values(?,?,?,?,?,?,?,?,?,?)");
                 st.setInt(1, ISBN);  
                 st.setString(2, BookTitle);
@@ -56,8 +55,7 @@ public class BookWS {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
-         return result;  
-        
+         return result;    
     }
     @WebMethod(operationName = "UpdateBook")
     public boolean UpdateBook(@WebParam(name = "ISBN") int ISBN,@WebParam(name = "BAssignTo") String BAssignTo,@WebParam(name = "BStatus") String BStatus ) {
