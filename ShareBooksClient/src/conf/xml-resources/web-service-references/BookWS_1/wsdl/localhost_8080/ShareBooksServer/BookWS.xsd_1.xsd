@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://serve/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serve/">
+
+<xs:element name="AddBook" type="tns:AddBook"/>
+
+<xs:element name="AddBookResponse" type="tns:AddBookResponse"/>
+
+<xs:element name="UpdateBook" type="tns:UpdateBook"/>
+
+<xs:element name="UpdateBookResponse" type="tns:UpdateBookResponse"/>
+
+<xs:element name="viewAllBookAvilable" type="tns:viewAllBookAvilable"/>
+
+<xs:element name="viewAllBookAvilableResponse" type="tns:viewAllBookAvilableResponse"/>
+
+<xs:element name="viewTopBooksOrderd" type="tns:viewTopBooksOrderd"/>
+
+<xs:element name="viewTopBooksOrderdResponse" type="tns:viewTopBooksOrderdResponse"/>
+
+<xs:element name="viewUserBookList" type="tns:viewUserBookList"/>
+
+<xs:element name="viewUserBookListResponse" type="tns:viewUserBookListResponse"/>
+
+<xs:complexType name="viewAllBookAvilable">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewAllBookAvilableResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewTopBooksOrderd">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewTopBooksOrderdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddBook">
+<xs:sequence>
+<xs:element name="ISBN" type="xs:int"/>
+<xs:element name="BookTitle" type="xs:string" minOccurs="0"/>
+<xs:element name="BookDesc" type="xs:string" minOccurs="0"/>
+<xs:element name="PublisherName" type="xs:string" minOccurs="0"/>
+<xs:element name="PublisherYear" type="xs:int"/>
+<xs:element name="Categury" type="xs:string" minOccurs="0"/>
+<xs:element name="UserFK" type="xs:string" minOccurs="0"/>
+<xs:element name="BookStatuse" type="xs:string" minOccurs="0"/>
+<xs:element name="BAssignTo" type="xs:string" minOccurs="0"/>
+<xs:element name="Author" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdateBook">
+<xs:sequence>
+<xs:element name="ISBN" type="xs:int"/>
+<xs:element name="BAssignTo" type="xs:string" minOccurs="0"/>
+<xs:element name="BStatus" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdateBookResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewUserBookList">
+<xs:sequence>
+<xs:element name="BAssignTo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewUserBookListResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
