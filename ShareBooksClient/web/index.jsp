@@ -123,6 +123,7 @@
                          <option>ISBN</option>
                          <option>BOOKTITLE</option>
                          <option>PUBLISHERNAME</option>
+			 <option>AUTHOR</option>
 	           </select>
 		</div>
                 
