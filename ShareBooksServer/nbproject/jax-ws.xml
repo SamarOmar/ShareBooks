@@ -7,6 +7,12 @@
     <service name="UsersWS">
       <implementation-class>serve.UsersWS</implementation-class>
     </service>
+    <service name="SearchWS">
+      <implementation-class>serve.SearchWS</implementation-class>
+    </service>
+    <service name="OrderWS">
+      <implementation-class>serve.OrderWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
