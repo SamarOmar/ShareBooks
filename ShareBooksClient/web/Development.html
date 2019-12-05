@@ -1,10 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Dec 9, 2019, 1:20:54 PM
-    Author     : HOME
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,67 +29,6 @@
 
   <body  id="page-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Book Sharing</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-               <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger " href="#home">Home</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger " href="#booklist">Book List</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-            </li>
-            <!-- Top 5 -->
-	    <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#top">Top 5</a>
-            </li>           
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Development.html">Development</a>
-            </li>
-            
-            
-            
-            
-    <% 
-     String username = (String)request.getAttribute("username");
-     Boolean login =  (Boolean)request.getAttribute("login");
-     
-     if(login != null)
-     if(login)
-    { session.setAttribute("username", username);
-      session.setAttribute("login", login);
-     %>
-     <script>
-         alert("logged into your account auccessfully");
-     </script>
-     <% }
-    if(session.getAttribute( "username" ) == null)
-    {
-               out.println("<li class='nav-item mx-0 mx-lg-1'> <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger portfolio-item' href='#portfolio-modal-1'>LogIn </a></li>  "
-                    +"<li class='nav-item mx-0 mx-lg-1'><a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger portfolio-item' href='#portfolio-modal-2'>Register </a> </li> "); 
-      
-    }
-  else
-    {
-        out.println("<li class='nav-item mx-0 mx-lg-1'> <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger ' href='account.jsp'>My Account </a></li>  "  ); 
-        out.println("<li class='nav-item mx-0 mx-lg-1'> <a class='nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger ' href='logout.jsp'>Log out </a></li>  "  ); 
-    }
-                 %>
-			
-             
-          </ul>
-        </div>
-      </div>
-    </nav>
 
     <!-- Header -->
     <header id="home" class="masthead bg-primary text-white text-center">
@@ -108,88 +40,10 @@
       </div>
     </header>
 
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio" id="booklist">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Book List</h2>
-     
-        <hr class="star-dark mb-5">
-          
-        <center>
-         
-                  
-          
-                <div class="form-group" style=" display:inline;">
-		   <select class="form-control " style="width:180px; display:inline; height:60px;"  id="by" required="required" data-validation-required-message="Please enter your password." >
-			<option disabled selected value>Search By </option>
-                         <option>All Available</option>
-                         <option>ISBN</option>
-                         <option>BOOKTITLE</option>
-                         <option>PUBLISHERNAME</option>
-			 <option>AUTHOR</option>
-	           </select>
-		</div>
-                
-                <div class="form-group" style=" display:inline;">
-		   <input class="form-control " style="width:200px; height:60px; display:inline;" type="text" id="value1"  placeholder="Word" required="required"  >
-		
-		</div>
-                
-               
-		<input type="hidden" id="username1" value="<% out.print(session.getAttribute("username") );  %>">	  
-		
-		
-               
-              <div class="form-group" style=" display:inline; ">
-                  <button type="submit" onclick="search()" class="btn btn-primary btn-xl" style="">Search</button>
-              </div>
-            </center><br>
-        <div id="listrow" class="row">
-  
-            <script>
-                function search()
-                {
-                    if($("#by").val() == "" )
-                    {
-                        alert("you have to choose search by field !!"); return;
-                    }
-                    if($("#by").val() == "All Available")
-                        list();
-                    else
-                        searching();
-                    
-                }
-     function searching()
-     {
-               $.ajax({
-		type:'POST', 
-		url: 'ws',
-                data: {type: "search", username: $("#username1").val(), by: $("#by").val(), value: $("#value1").val()},
-		
-		
-	  
-         	success: function(response){ 
-                      $("#listrow").html(response);
-		
-		
-		} //End success function
-		
-		, error: function(errors) {
-		alert("عذرا حصل خطأ, الرجاء التأكد من اتصالك بالانترنت");
 
-		}
-		});
-     }
-                </script>
-                
-            
-		
-     
-	 </div>
-    </section>
 
     <!-- About Section -->
-    <section class="bg-primary text-white mb-0" id="about">
+    <section class="portfolio" id="about">
       <div class="container">
         <h2 class="text-center text-uppercase text-white">About</h2>
         <hr class="star-light mb-5">
@@ -199,29 +53,55 @@
             Book sharing is a platform for giving away books that you do not need any more. You can add, 
             declare and deliver books to anyone who is interested in owning your precious books.
             </p></center>
-     
-          
+<div class="wiki">
+    <a name="Welcome-to-the-OpenPLi-development-website"></a>
+<h1>Welcome to the ShareBook development website<a href="#Welcome-to-the-OpenPLi-development-website" class="wiki-anchor"></a></h1>
+
+<p>We have concentrated all information related to the development of Share Book Web Application on this website.</p>
+
+<a name="Available-information"></a>
+<h2>Available information<a href="#Available-information" class="wiki-anchor"></a></h2>
+
+<p>On this website you find the following information:</p>
+
+<ul>
+<li>Issue tracker for all Share Book projects Server and client</li>
+<li>Technical wiki pages on how to setup your own build environment</li>
+<li>Development documentation</li>
+<li>...</li>
+</ul>
+
+<a name="Beta-programme"></a>
+<h2>Beta programme<a href="#Beta-programme" class="wiki-anchor"></a></h2>
+
+<p>For the moment, all information is available read-only. We are working on setting up beta programmes for members of the forum who would like to be more involved in development work, or who like to have access to development firmware for test purposes and are willing to test  new features and bug fixes before they will be added to the next Release Candidate.</p>
+
+<p>In due time, details about these programmes will be announced in the forum.</p>
+
+<a name="Code-status"></a>
+<h2>Code status<a href="#Code-status" class="wiki-anchor"></a></h2>
+
+<p>Stable <img src="" alt="Code status"></p>
+
+  </div> 
+<div class="splitcontentright">
+    <div class="members box">
+    <h3>Members</h3>
+      <p><span class="label">Manager:</span> <a class="user active" href="/users/68">Samar</a></p>
+      <p><span class="label">Developer:</span> <a class="user active" href="/users/25">Samar</a>, <a class="user active" href="/users/62">Reem</a></p>
+      <p><span class="label">Reporter:</span> <a class="user active" href="/users/28">Reem</a></p>
+      <p><span class="label">Tester:</span> <a class="user active" href="/users/28">Samar</a>, <a class="user active" href="/users/71">Reem</a></p>
+  </div>
+
+
+  
+</div>
         </div>
     
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <!-- Top 5 -->
-     <section id="top">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Top 5 Ordered Books</h2>
-        <hr class="star-dark mb-5">
-        <center>
-             <div class="container">
-        <div id="orderlist" class="row">
-  
-         
-        </div>
-      </div>
-        </center>
-      </div>
-    </section>
+
 	 
 
     <!-- Footer -->
@@ -401,83 +281,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
-
-        <script>
-        $(document).ready(function() {
-  	list();
-
- });
- function list()
- {
-               
-        	$.ajax({
-		type:'POST', 
-		url: 'ws',
-                data: {type: "listall", username: <%=session.getAttribute("username")%>},
-		
-		
-	  
-      	success: function(response){ 
-	    
-	    $("#listrow").html(response);
-		$.ajax({
-		type:'POST', 
-		url: 'ws',
-                data: {type: "top5"},
-		
-		
-	  
-         	success: function(response){ 
-		 $("#orderlist").html(response);
-		
-		} //End success function
-		
-		, error: function(errors) {
-		alert("عذرا حصل خطأ, الرجاء التأكد من اتصالك بالانترنت");
-
-		}
-		});
-		} //End success function
-		
-		, error: function(errors) {
-		alert("عذرا حصل خطأ, الرجاء التأكد من اتصالك بالانترنت");
-
-		}
-		}); //End AJAX
- }
- function order(element)
- {
-      var isbn = $(element).attr("id");
-      var login = <%=session.getAttribute("login")%>;
-      var username = <%=session.getAttribute("username")%>;
-      if(login === null)
-      alert("you have to login first !!");
-  else
-  {
-	$.ajax({
-		type:'POST', 
-		url: 'ws',
-                data: {type: "order", username: username, isbn: isbn},
-		
-		
-	  
-         	success: function(response){ 
-		 alert(response);
-                 location='index.jsp';
-		
-		} //End success function
-		
-		, error: function(errors) {
-		alert("عذرا حصل خطأ, الرجاء التأكد من اتصالك بالانترنت");
-
-		}
-		});
-  }//else
-      
-  
- }
-        
-        </script>
    
   </body>
 
